@@ -12,7 +12,6 @@ import asyncio
 import random
 from nextcord import Interaction, SlashOption
 from config import *
-import keep_alive
 
 intents = nextcord.Intents().all()
 intents.members = True
@@ -703,7 +702,6 @@ async def meme(ctx):
                            url=f"{memeURL}")
     embed.set_image(url=memeURL)
     embed.set_footer(text=f"r/{memeSub}")
-    await ctx.send(embed=embed) #credit: glowstik
-
-keep_alive.keep_alive()
+    await ctx.send(embed=embed) 
+    
 client.run(BOT_TOKEN)
